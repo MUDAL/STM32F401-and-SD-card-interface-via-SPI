@@ -19,10 +19,10 @@ void USART2_Init(uint16_t baud)
 void USART2_TransmitString(char* pData)
 {
 	uint32_t i = 0;
-	while (*(pData + i) != '\0')
+	while (pData[i] != '\0')
 	{
 		while ((USART2->SR & USART_SR_TXE) == 0x00);//wait for TXE bit to be set
-		USART2->DR = *(pData + i);
+		USART2->DR = pData[i];
 		i++;
 	}
 }
