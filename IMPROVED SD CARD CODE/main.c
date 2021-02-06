@@ -34,8 +34,8 @@ int main(void)
   
   Clocks_Init();
   SysTick_Init();
-	SD_SPI_Init();
-	Serial_Init();
+  SD_SPI_Init();
+  Serial_Init();
 
   /*Mount SD card*/
   fresult = f_mount(&fs, "", 0);
